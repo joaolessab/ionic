@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "case--study-vue",
+	"webDir": "dist",
+	"bundledWebRuntime": false
+}

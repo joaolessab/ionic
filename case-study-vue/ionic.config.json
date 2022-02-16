@@ -1,0 +1,7 @@
+{
+  "name": "case--study-vue",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
