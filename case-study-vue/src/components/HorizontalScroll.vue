@@ -1,5 +1,5 @@
 <template>
-  <ion-item v-if="message" :routerLink="'/message/' + message.id" :detail="false" class="list-item">
+  <ion-item v-if="message" :routerLink="'/message/' + message.id" :detail="false" class="list-item card">
     <div slot="start" :class="!message.read ? 'dot dot-unread' : 'dot'"></div>
     <ion-label class="ion-text-wrap">
       <h2>

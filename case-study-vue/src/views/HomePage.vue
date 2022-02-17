@@ -17,7 +17,7 @@
         </ion-toolbar>
       </ion-header>
       
-      <ion-list>
+      <ion-list class="scrolling-wrapper">
         <HorizontalScroll v-for="message in messages" :key="message.id" :message="message" />
       </ion-list>
     </ion-content>
@@ -57,3 +57,13 @@ export default defineComponent({
   },
 });
 </script>
+<style scoped>
+  .scrolling-wrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;  
+  }
+  .card {
+    display: inline-block;
+  }
+</style>
