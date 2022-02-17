@@ -12,10 +12,6 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Home',
     component: HomePage
   },
-  {
-    path: '/message/:id',
-    component: () => import('../views/ViewMessagePage.vue')
-  }
 ]
 
 const router = createRouter({
