@@ -18,7 +18,7 @@
       </ion-header>
       
       <ion-list>
-        <MessageListItem v-for="message in messages" :key="message.id" :message="message" />
+        <HorizontalScroll v-for="message in messages" :key="message.id" :message="message" />
       </ion-list>
     </ion-content>
   </ion-page>
@@ -26,7 +26,7 @@
 
 <script lang="ts">
 import { IonContent, IonHeader, IonList, IonPage, IonRefresher, IonRefresherContent, IonTitle, IonToolbar } from '@ionic/vue';
-import MessageListItem from '@/components/MessageListItem.vue';
+import HorizontalScroll from '@/components/HorizontalScroll.vue';
 import { defineComponent } from 'vue';
 import { getMessages } from '@/data/messages';
 
@@ -53,7 +53,7 @@ export default defineComponent({
     IonRefresherContent,
     IonTitle,
     IonToolbar,
-    MessageListItem
+    HorizontalScroll
   },
 });
 </script>
