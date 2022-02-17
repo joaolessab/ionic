@@ -1,24 +1,19 @@
 <template>
-  <ion-item v-if="message" :routerLink="'/message/' + message.id" :detail="false" class="list-item card">
-    <div slot="start" :class="!message.read ? 'dot dot-unread' : 'dot'"></div>
+  <ion-item v-if="message" :routerLink="'/message/' + message.id" :detail="false" class="list-item card test">
     <ion-label class="ion-text-wrap">
       <h2>
-        {{ message.fromName }}
+        {{ message.author }}
         <span class="date">
-          <ion-note>{{ message.date }}</ion-note>
           <ion-icon :icon="chevronForward" size="small" v-if="isIos()"></ion-icon>
         </span>
       </h2>
-      <h3>{{ message.subject }}</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
+      <ion-img :src="message.download_url" class="rounded-image"></ion-img>
     </ion-label>
   </ion-item>
 </template>
 
 <script lang="ts">
-import { IonIcon, IonItem, IonLabel, IonNote } from '@ionic/vue';
+import { IonIcon, IonItem, IonLabel, IonImg } from '@ionic/vue';
 import { chevronForward } from 'ionicons/icons';
 import { defineComponent } from 'vue';
 
@@ -28,7 +23,7 @@ export default defineComponent({
     IonIcon,
     IonItem,
     IonLabel,
-    IonNote,
+    IonImg
   },
   props: {
     message: Object,
@@ -49,6 +44,7 @@ export default defineComponent({
 .list-item {
   --padding-start: 0;
   --inner-padding-end: 0;
+  padding: 10px;
 }
 
 .list-item ion-label {
@@ -97,7 +93,12 @@ export default defineComponent({
   margin: 16px 10px 16px 16px;
 }
 
-.list-item .dot-unread {
-  background: var(--ion-color-primary);
+.list-item ion-img {
+  width: 150px;
+  height: 100px;
+  margin-top: 10px;
+}
+.list-item img{  
+  border-radius: 10px !important;
 }
 </style>
